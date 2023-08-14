@@ -21,7 +21,8 @@ module.exports = {
         "primaryGreen" : "#01A998",
         "lightGreen" : "#C9FFFC",
         "darkGreen" : "#0A2E48",
-        "light" : "#F5FBF4"
+        "light" : "#F5FBF4",
+        "navHover" : "rgba(31, 61, 83, 0.5)"
       },
     },
   },

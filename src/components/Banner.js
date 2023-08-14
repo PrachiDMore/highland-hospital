@@ -14,7 +14,7 @@ const Banner = ({src, category, title, desc, button}) => {
           <h2 className='text-4xl font-bold text-white '>{category}</h2>
           <h1 className='w-[80%] text-center text-6xl font-bold text-primaryGreen '>{title}</h1>
           {desc && <p className='w-[60%] text-lightGreen text-center mt-3'>{desc}</p>}
-          {button && <Button text={button.text} link={button.link}/>}
+          {button && <Button text={button.text} link={button.link} className={"mt-3"}/>}
         </div>
       </div>
     </>

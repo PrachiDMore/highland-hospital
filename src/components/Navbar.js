@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import { Lexend } from 'next/font/google'
+import Link from 'next/link'
 
 const lexend = Lexend({ subsets: ['latin'] })
 
@@ -12,14 +13,14 @@ const Navbar = () => {
           <img src='/assets/logo.png' />
         </div>
         <ul className='w-[70vw] items-center justify-between flex'>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Specialities</li>
-          <li>Careers</li>
-          <li>Contact</li>
-          <li>News</li>
-          <li>Nursing</li>
+          <Link href={"/"}>Home</Link>
+          <Link href={"/"}>About Us</Link>
+          <Link href={"/"}>Services</Link>
+          <Link href={"/"}>Specialities</Link>
+          <Link href={"/"}>Careers</Link>
+          <Link href={"/contact-us"}>Contact</Link>
+          <Link href={"/"}>News</Link>
+          <Link href={"/nursing"}>Nursing</Link>
           <Button text={"Book Appointment"} />
         </ul>
       </div>

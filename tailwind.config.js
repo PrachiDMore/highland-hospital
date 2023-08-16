@@ -24,7 +24,9 @@ module.exports = {
         "darkGreen" : "#062F2B",
         "light" : "#F5FBF4",
         "navHover" : "rgba(31, 61, 83, 0.5)",
-        "gray" : "35C5C5C"
+        "gray" : "35C5C5C",
+        "lightBlue" : "#F4F8FB",
+        "lightBlue2" : "#ECF3F9"
       },
     },
   },

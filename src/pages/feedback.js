@@ -70,8 +70,8 @@ const feedback = () => {
 
               <div className='w-full flex gap-10 justify-between'>
                 <div className='w-1/2 flex gap-1 flex-col'>
-                  <label className='font-medium'>Email</label>
-                  <input type='email' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+                  <label className='peer-focus:text-primaryGreen font-medium'>Email</label>
+                  <input type='email' className='peer border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
                 <div className='w-1/2 flex gap-1 flex-col'>
                   <label className='font-medium'>Phone Number</label>

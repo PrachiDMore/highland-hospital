@@ -1,4 +1,5 @@
 import Banner from '@/components/Banner'
+import Layout from '@/components/Layout'
 import Info from '@/components/Info'
 import React from 'react'
 

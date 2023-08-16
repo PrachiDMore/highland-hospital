@@ -15,7 +15,7 @@ const nursing = () => {
         <div className='h-auto w-screen flex flex-col'>
           <Banner src={"/assets/nursing/main.png"} title={"Welcome To Mangalore College of Nursing"} button={{ text: "Enquire Now", link: "asd" }} />
 
-          <Info title={"About Us"} src={"/assets/nursing/info.png"} paras={["As the healthcare landscape continues to evolve and grow at a fast pace, the role and need for a workforce of highly educated nurses is becoming even more critical. Hence we decided to expand our service into the field of health education. This will cater to the increasing need of competent and sincere health service providers that our society lacks."]} />
+          <Info category={"other"} title={"About Us"} src={"/assets/nursing/info.png"} paras={["As the healthcare landscape continues to evolve and grow at a fast pace, the role and need for a workforce of highly educated nurses is becoming even more critical. Hence we decided to expand our service into the field of health education. This will cater to the increasing need of competent and sincere health service providers that our society lacks."]} />
 
           <div className={`w-full px-28 pb-10 flex flex-col gap-2 bg-light ${poppins.className}`}>
             <p >From the academic year 2019-20, Highland Hospital has taken over the administration of "Mangalore College of Nursing" and "Mangalore Institute of Nursing Sciences", which has been running since 1998 under the 'Ullal Charitable Education Trust'. We have shifted the college to a new campus in Ullal and the clinical posting of the students will be at our hospital. The 21st batch of Nursing students have joined the college in the academic year 2019-20; under the new management.</p>

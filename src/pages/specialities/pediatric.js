@@ -16,7 +16,7 @@ const pediatric = () => {
           title={"The center specializes in treating children with:"}
           centerTitle={true}
           grid={true}
-          className={"py-10"}
+          className={"pb-10"}
           list={[
             "Genital and urinary conditions",
             "Allergies",

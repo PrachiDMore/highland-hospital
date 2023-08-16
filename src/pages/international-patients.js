@@ -29,7 +29,7 @@ const InternationalPatients = () => {
 						"Cutting edge technology to support medical diagnostics and medical procedures are employed by specialists in all medical facilities. Complicated cancer care and surgeries, neuro and even general surgeries require high-end technology to continually better outcomes, minimize complications, enable faster recovery and reduce length of hospital stay. Our medical management team and acclaimed specialists are quite comfortable in challenging themselves to new frontiers to provide solutions, always building on their expertise."
 					]} />
 
-				<div className='py-5 flex flex-col items-center'>
+				<div className=' pb-10 bg-light flex flex-col items-center'>
 					<div className='w-full flex flex-col items-center'>
 						<h1 className={`text-4xl font-bold text-darkBlue ${lexend.className}`}>{"Out-Patient Services"}</h1>
 					</div>
@@ -87,7 +87,7 @@ const InternationalPatients = () => {
 						</div>
 
 						{/* right */}
-						<div className={'w-3/5 p-10 flex flex-col gap-3 items-center justify-center text-gray ' + poppins.className}>
+						<div className={'w-3/5 p-10 flex flex-col gap-5 items-center justify-center text-gray ' + poppins.className}>
 							<div className='w-full flex gap-10 justify-between'>
 								<div className='w-1/2 flex gap-1 flex-col'>
 									<label className='font-medium'>First Name</label>
@@ -110,10 +110,25 @@ const InternationalPatients = () => {
 								</div>
 							</div>
 
-							<div className='w-full flex gap-1 flex-col'>
+							<div className='w-full flex gap-5 justify-between'>
+								<div className='w-[30%] flex gap-1 flex-col'>
+									<label className='font-medium'>Select Date</label>
+									<input type='date' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+								</div>
+								<div className='w-[30%] flex gap-1 flex-col'>
+									<label className='font-medium'>Select Time</label>
+									<input type='time' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+								</div>
+								<div className='w-[40%] flex gap-1 flex-col'>
+									<label className='font-medium'>Select Doctor</label>
+									<input type='text' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+								</div>
+							</div>
+
+							{/* <div className='w-full flex gap-1 flex-col'>
 								<label className='font-medium'>Subject</label>
 								<input type='text' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
-							</div>
+							</div> */}
 
 							<div className='w-full flex gap-1 flex-col'>
 								<label className='font-medium'>Message</label>

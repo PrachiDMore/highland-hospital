@@ -17,7 +17,7 @@ const neurology = () => {
             title={"Services offered:"}
             centerTitle={true}
             grid={true}
-            className={"py-10"}
+            className={"pb-10"}
             list={[
               "Carotid, Ultrasound and Transcranial Doppler Vascular studies",
               "Neuro-Oncology (Brain Tumours)",

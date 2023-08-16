@@ -16,7 +16,7 @@ const urology = () => {
             title={"Some of the more common problems treated by our experts include:"}
             centerTitle={true}
             grid={true}
-            className={"pt-10"}
+            // className={"pt-10"}
             list={[
               "Stones in the urinary tract",
               "Prostate issues",

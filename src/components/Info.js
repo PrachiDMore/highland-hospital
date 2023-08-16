@@ -1,10 +1,11 @@
 import React from 'react'
 import { Lexend, Poppins } from 'next/font/google'
+import Button from './Button'
 
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
-const Info = ({ src, category, title, paras, name }) => {
+const Info = ({ src, category, title, paras, name, button }) => {
   return (
     <>
       <div className={category === "Specialities" || category === "other" ? 'bg-light h-auto w-screen w-max-screen flex flex-row-reverse justify-end items-start gap-14 px-28 py-20':'bg-light h-auto w-screen w-max-screen flex justify-center items-start gap-14 px-28 py-20' }>
@@ -20,6 +21,7 @@ const Info = ({ src, category, title, paras, name }) => {
               return <p className={`mt-3 ${poppins.className}`}>{info}</p>
             })
           }
+          {button && <Button text={button.text} link={button.link} className={"mt-3"}/>}
         </div>
       </div>
     </>

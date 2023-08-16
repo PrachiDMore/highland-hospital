@@ -16,7 +16,7 @@ const nephrology = () => {
             title={"Evaluation is offered for the following symptoms:"}
             centerTitle={true}
             grid={true}
-            className={"py-10"}
+            className={"pb-10"}
             list={[
               "Hypertension that has failed to respond to multiple forms of anti-hypertensive medication",
               "Chronic kidney disease, usually with an unavoidable rise in creatinine, phosphate in muscle, a break down product of creatinine",

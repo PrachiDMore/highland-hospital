@@ -17,7 +17,7 @@ const ophthalmology = () => {
             title={"Highland Hospital specialty eye care services include:"}
             centerTitle={true}
             grid={true}
-            className={"py-10"}
+            className={"pb-10"}
             list={[
               "Cataract surgery",
               "Glaucoma",

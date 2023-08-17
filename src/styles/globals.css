@@ -30,7 +30,17 @@
 }
 
 .card-shadow {
-  -webkit-box-shadow: 0px 0px 40px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 40px -18px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 40px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.75);
+}
+
+.feedback-shadow {
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.banner-gradient {
+  /* background: linear-gradient(270deg, #01A998 0%, #3D504E 35.73%, #333 52.63%, #2D4442 68.54%, #01A998 100%); */
 }

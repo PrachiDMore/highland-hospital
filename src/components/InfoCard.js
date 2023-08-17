@@ -8,10 +8,10 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 const InfoCard = ({ title, desc, read }) => {
   return (
     <>
-      <div className='bg-white p-5 rounded-lg card-shadow'>
-        <h1 className={`text-lg font-bold text-darkBlue ${lexend.className}`}>{title}</h1>
-        <p className={`mt-1 ${poppins.className}`}>{desc}</p>
-        <Link href={read} className={`text-primaryGreen ${poppins.className}`}>Read More</Link>
+      <div className='bg-white p-5 rounded-xl card-shadow'>
+        <h1 className={`leading-6	 text-xl font-semibold text-darkBlue capitalize ${lexend.className}`} dangerouslySetInnerHTML={{ __html: title }}></h1>
+        <p className={`text-sm mt-2 font-medium text-gray-500 ${poppins.className}`}>{desc}</p>
+        <Link href={read} className={`text-xs font-semibold text-primaryGreen ${poppins.className}`}>Read More</Link>
       </div>
     </>
   )

@@ -57,37 +57,37 @@ const contactUs = () => {
             </div>
 
             {/* right */}
-            <div className='w-3/5 p-10 flex flex-col gap-3 items-center justify-center text-gray'>
+            <div className='w-3/5 p-10 flex flex-col gap-3 items-center justify-center text-grey'>
               <div className='w-full flex gap-10 justify-between'>
                 <div className='w-1/2 flex gap-1 flex-col'>
                   <label className='font-medium'>First Name</label>
-                  <input type='text' className='border-b focus:border-b-2 border-gray outline-none focus:border-primaryGreen' />
+                  <input type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
                 </div>
                 <div className='w-1/2 flex gap-1 flex-col'>
                   <label className='font-medium'>Last Name</label>
-                  <input type='text' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+                  <input type='text' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
               </div>
 
               <div className='w-full flex gap-10 justify-between'>
                 <div className='w-1/2 flex gap-1 flex-col'>
                   <label className='font-medium'>Email</label>
-                  <input type='email' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+                  <input type='email' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
                 <div className='w-1/2 flex gap-1 flex-col'>
                   <label className='font-medium'>Phone Number</label>
-                  <input type='number' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+                  <input type='number' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
               </div>
 
               <div className='w-full flex gap-1 flex-col'>
                 <label className='font-medium'>Subject</label>
-                <input type='text' className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none' />
+                <input type='text' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
               </div>
 
               <div className='w-full flex gap-1 flex-col'>
                 <label className='font-medium'>Message</label>
-                <textarea className='border-b border-gray focus:border-b-2 focus:border-primaryGreen outline-none h-16 resize-none' />
+                <textarea className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none h-16 resize-none' />
               </div>
 
               <Button text={"Submit"} className={"text-sm mt-3"} />

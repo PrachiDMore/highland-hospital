@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <>
       <div className={`bg-white w-screen max-w-screen h-max flex flex-col footer-shadow px-20 py-5 z-[1000] relative  ${lexend.className}`}>
-        <div className='w-full flex gap-8 justify-between py-3 pb-8 border-b border-gray-300 text-darkBlue text-sm'>
+        <div className='w-full flex gap-8 justify-between py-3 pb-8 border-b border-grey-300 text-darkBlue text-sm'>
           <div className='w-[35vw] '>
             <img src='/assets/logo.png' />
             <p className='w-4/5'>"Your health, our commitment - Together, we make a difference."</p>

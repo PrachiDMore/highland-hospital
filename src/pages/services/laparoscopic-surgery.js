@@ -1,5 +1,6 @@
 import Banner from '@/components/Banner'
 import Info from '@/components/Info'
+import Layout from '@/components/Layout'
 import React from 'react'
 
 const laparoscopicSurgery = () => {

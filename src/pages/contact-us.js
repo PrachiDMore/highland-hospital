@@ -15,15 +15,15 @@ const contactUs = () => {
   return (
     <>
       <Layout>
-        <div className={`mt-[120px] flex flex-col justify-center items-center w-screen w-max-screen py-10 bg-light ${poppins.className}`}>
+        <div className={`lg:px-0 px-5 lg:mt-[120px] mt-[80px] flex flex-col justify-center items-center w-screen w-max-screen py-10 bg-light ${poppins.className}`}>
           <div className='w-full flex flex-col items-center'>
-            <h1 className={`w-full text-center text-6xl font-bold text-primaryGreen ${lexend.className}`}>Contact Us</h1>
-            <p>Any question or remarks? Just write a message! </p>
+            <h1 className={`w-full text-center lg:text-6xl font-bold text-4xl text-primaryGreen ${lexend.className}`}>Contact Us</h1>
+            <p className='lg:text-left text-center lg:text-base text-sm'>Any question or remarks? Just write a message! </p>
           </div>
 
-          <div className='w-[80vw] h-auto flex p-4 mt-6 bg-white contact-shadow rounded-lg'>
+          <div className='lg:w-[80vw] w-full h-auto flex lg:flex-row flex-col p-4 mt-6 bg-white contact-shadow rounded-lg'>
             {/* left */}
-            <div className='w-2/5 bg-darkGreen flex flex-col justify-between rounded-lg px-6 py-7 text-light'>
+            <div className='lg:w-2/5 w-full bg-darkGreen flex flex-col justify-between rounded-lg px-6 py-7 text-light'>
               <div className='flex flex-col gap-10'>
                 <div>
                   <h1 className={`text-2xl font-bold text-primaryGreen ${lexend.className}`}>Contact Information</h1>
@@ -48,7 +48,7 @@ const contactUs = () => {
                 </div>
               </div>
 
-              <div className='flex gap-3 '>
+              <div className='lg:mt-0 mt-4 flex gap-3 '>
                 <FaFacebookF />
                 <FiInstagram />
                 <BsTwitter />
@@ -57,24 +57,24 @@ const contactUs = () => {
             </div>
 
             {/* right */}
-            <div className='w-3/5 p-10 flex flex-col gap-3 items-center justify-center text-grey'>
-              <div className='w-full flex gap-10 justify-between'>
-                <div className='w-1/2 flex gap-1 flex-col'>
+            <div className='lg:w-3/5 w-full lg:p-10 py-8 flex flex-col gap-3 items-center justify-center text-grey'>
+              <div className='w-full flex lg:flex-row flex-col lg:gap-10 gap-3 justify-between'>
+                <div className='lg:w-1/2 w-full flex gap-1 flex-col'>
                   <label className='font-medium'>First Name</label>
                   <input type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
                 </div>
-                <div className='w-1/2 flex gap-1 flex-col'>
+                <div className='lg:w-1/2 w-full flex gap-1 flex-col'>
                   <label className='font-medium'>Last Name</label>
                   <input type='text' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
               </div>
 
-              <div className='w-full flex gap-10 justify-between'>
-                <div className='w-1/2 flex gap-1 flex-col'>
+              <div className='w-full flex lg:flex-row flex-col lg:gap-10 gap-3 justify-between'>
+                <div className='lg:w-1/2 w-full flex gap-1 flex-col'>
                   <label className='font-medium'>Email</label>
                   <input type='email' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
-                <div className='w-1/2 flex gap-1 flex-col'>
+                <div className='lg:w-1/2 w-full flex gap-1 flex-col'>
                   <label className='font-medium'>Phone Number</label>
                   <input type='number' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
                 </div>
@@ -87,7 +87,7 @@ const contactUs = () => {
 
               <div className='w-full flex gap-1 flex-col'>
                 <label className='font-medium'>Message</label>
-                <textarea className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none h-16 resize-none' />
+                <textarea className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none lg:h-16 h-32 resize-none' />
               </div>
 
               <Button text={"Submit"} className={"text-sm mt-3"} />

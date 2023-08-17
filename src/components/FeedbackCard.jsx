@@ -6,7 +6,7 @@ const lexend = Lexend({ subsets: ['latin'] })
 
 const FeedbackCard = () => {
 	return (
-		<div className={'relative p-4 rounded-lg bg-white feedback-shadow w-72 pt-8 ' + lexend.className}>
+		<div className={'m-auto relative p-4 rounded-lg bg-white feedback-shadow w-72 pt-8 ' + lexend.className}>
 			<div className='left-8 absolute -top-4 shadow-xl flex items-center justify-center bg-accentGreenHover h-12 w-12 rounded-full aspect-square'><FaQuoteRight className='text-xl text-white' /></div>
 			<span className='font-bold'>4.8/5.0</span>
 			<p className='text-sm text-gray-500 leading-5 mt-2'>Their ability to listen attentively and provide personalized care truly sets them apart. They took the time to understand my concerns, thoroughly explained diagnoses.</p>

@@ -29,7 +29,7 @@ const Covid = () => {
 
 				<List
 					title={"Best Practices"}
-					className={"pb-10 bg-light "}
+					className={"lg:pb-10 bg-light px-5"}
 					text={"In order to protect ourselves from the corona virus, here are some of the best practices to put into use!"}
 					centerTitle={true}
 					list={[
@@ -42,8 +42,8 @@ const Covid = () => {
 					]}
 				/>
 
-				<div className={`bg-light w-screen h-auto px-28 py-12 flex justify-center items-center ${lexend.className}`}>
-					<div class="w-[60vw] relative overflow-x-auto shadow-md sm:rounded-lg">
+				<div className={`bg-light w-screen h-auto lg:px-28 px-5 py-12 flex justify-center items-center ${lexend.className}`}>
+					<div class="lg:w-[60vw] w-full relative overflow-x-auto shadow-md sm:rounded-lg">
 						<table class="w-full text-sm">
 							<thead class="text-center text-white bg-darkGreen">
 								<tr>

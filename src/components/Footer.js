@@ -13,14 +13,14 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 const Footer = () => {
   return (
     <>
-      <div className={`bg-white w-screen max-w-screen h-max flex flex-col footer-shadow px-20 py-5 z-[1000] relative  ${lexend.className}`}>
-        <div className='w-full flex gap-8 justify-between py-3 pb-8 border-b border-grey-300 text-darkBlue text-sm'>
-          <div className='w-[35vw] '>
+      <div className={`bg-white w-screen max-w-screen h-max flex flex-col footer-shadow lg:px-20 px-5 py-5 z-[1000] relative  ${lexend.className}`}>
+        <div className='w-full flex lg:flex-row flex-col gap-8 justify-between py-3 pb-8 border-b border-grey-300 text-darkBlue text-sm'>
+          <div className='lg:w-[35vw] w-full '>
             <img src='/assets/logo.png' />
             <p className='w-4/5'>"Your health, our commitment - Together, we make a difference."</p>
           </div>
 
-          <div className='w-[25vw] flex flex-col gap-3 '>
+          <div className='lg:w-[25vw] flex flex-col gap-3 w-full '>
             <h1 className='text-base font-medium '>Useful Links</h1>
             <ul className='flex flex-col gap-2'>
               <li>Services</li>
@@ -30,7 +30,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className='w-[30vw] flex flex-col gap-3 '>
+          <div className='lg:w-[30vw] flex flex-col gap-3 w-full'>
             <h1 className='text-base font-medium '>Contact</h1>
             <div className='flex flex-col gap-2 text-sm'>
               <div className='flex items-center gap-2'>
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='w-[40vw] flex flex-col gap-3'>
+          <div className='lg:w-[40vw] flex flex-col gap-3 w-full'>
             <h1 className='text-base font-medium '>Newsletter</h1>
             <p>Subscribe to our newsletter and stay up to data.</p>
             <input className='bg-primaryGreen rounded-lg text-white px-6 py-3 placeholder:text-slate-200 outline-none' type='email' placeholder='Email Address' />

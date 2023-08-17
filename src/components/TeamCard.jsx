@@ -9,7 +9,7 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 const TeamCard = () => {
   return (
     <>
-      <div className='w-60 h-[270px]'>
+      <div className='w-60 h-[270px] m-auto'>
         <div className='flex gap-2 items-start h-[200px]'>
           <img className='h-full aspect-square' src="/assets/home/team1.png" alt="" />
           <div className='h-full flex flex-col items-center gap-3'>

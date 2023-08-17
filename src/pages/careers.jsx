@@ -13,8 +13,8 @@ const careers = () => {
       <Layout>
         <Banner src={"/assets/careers.png"} desc={"There is no better time to become one of us."} title={"Careers"} />
 
-        <div className={`bg-light w-screen h-auto px-28 py-12 flex justify-center items-center ${lexend.className}`}>
-          <div class="w-[70vw] relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div className={`bg-light w-screen h-auto lg:px-28 px-5 py-12 flex justify-center items-center ${lexend.className}`}>
+          <div class="lg:w-[70vw] w-full relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left  dark:text-gray-400">
               <thead class="text-center text-white bg-darkGreen">
                 <tr>
@@ -44,7 +44,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply Now"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 <tr class="bg-light ">
@@ -58,7 +58,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply Now"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 <tr class="bg-white ">
@@ -72,7 +72,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply Now"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 

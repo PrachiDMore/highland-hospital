@@ -7,13 +7,28 @@ import { Lexend, Poppins } from 'next/font/google'
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
+
+const CustomList = <div className={`mt-5 ${lexend.className}`}>
+  <div className='mt-2'>
+    <h1 className='font-semibold text-lg '>1. Advanced Medical Facilities</h1>
+    <p className={`ml-8 ${poppins.className}`}>Cutting-edge medical facilities for accurate diagnoses and effective treatments.</p>
+  </div>
+  <div className='mt-2'>
+    <h1 className='font-semibold text-lg '>2. Expert Multidisciplinary Team</h1>
+    <p className={`ml-8 ${poppins.className}`}>Our hospital's team of professionals aim at providing you top-quality care and personalized treatment plans.</p>
+  </div>
+  <div className='mt-2'>
+    <h1 className='font-semibold text-lg '>3. Comprehensive Healthcare Services</h1>
+    <p className={`ml-8 ${poppins.className}`}>Our Comprehensive healthcare services with specialized departments, ensure holistic care for patients of all ages.</p>
+  </div>
+</div>
 const aboutUs = () => {
   return (
     <>
     <Layout>
         <Banner title={"About Us"} src={"/assets/about-us/main.png"} />
 
-        <Info title={"About Us"} src={"/assets/about-us/image1.png"} paras={["Highland Hospital is a premier healthcare institution dedicated to delivering exceptional medical services. With a focus on patient-centered care, our experienced team of professionals provides comprehensive treatments, advanced technology, and compassionate support. We are committed to promoting well-being and improving lives through our commitment to excellence in healthcare."]} button={{ text: "Join Now", link: "asd" }}/>
+        <Info title={"About Us"} isImage={true} src={"/assets/about-us/Group.png"} paras={["Highland Hospital is a premier healthcare institution dedicated to delivering exceptional medical services. With a focus on patient-centered care, our experienced team of professionals provides comprehensive treatments, advanced technology, and compassionate support. We are committed to promoting well-being and improving lives through our commitment to excellence in healthcare."]} component={CustomList} button={{ text: "Join Now", link: "asd" }}/>
 
         <div className='w-full px-28 pb-10 bg-light grid grid-cols-1 gap-10'>
           <div className='w-full flex justify-center items-start gap-24'>

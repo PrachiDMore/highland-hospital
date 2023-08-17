@@ -7,6 +7,7 @@ import FeedbackCard from '@/components/FeedbackCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import TeamCard from '@/components/TeamCard'
 
 
 const lexend = Lexend({ subsets: ['latin'] })
@@ -76,7 +77,6 @@ export default function Home() {
         </div>
 
         {/* section 4 banner */}
-
         <div className='text-white relative h-[300px] w-screen' style={{
           backgroundImage: "url(/assets/banner-bg.jpg)"
         }}>
@@ -89,7 +89,42 @@ export default function Home() {
           </div>
         </div>
 
+        {/* section 5 our team */}
         <div className='w-full px-24 p-10'>
+          <h1 className={`text-2xl w-full text-center font-semibold text-primaryGreen ${lexend.className}`}>Our Team</h1>
+          <h1 className={`text-5xl w-full text-center font-bold text-darkBlue ${lexend.className}`}>Our Certified doctors</h1>
+          {/* <TeamCard/> */}
+          <div className=' flex justify-between mt-7'>
+            <Swiper
+              grabCursor={true}
+              loop={true}
+              spaceBetween={30}
+              slidesPerView={4}
+              // modules={[Autoplay]}
+              autoplay={{
+                delay: 3000
+              }}
+              onActiveIndexChange={(swiper) => {
+                console.log(swiper.classNames)
+              }}
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+              <SwiperSlide className='py-6 '><TeamCard /></SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+
+        {/* section 6 feedback */}
+        <div className='w-full px-24 p-10 bg-light'>
           <h1 className={`text-2xl w-full text-center font-semibold text-primaryGreen ${lexend.className}`}>Testimonials</h1>
           <h1 className={`text-5xl w-full text-center font-bold text-darkBlue ${lexend.className}`}>Let's See Our Patients <br /> Feedback</h1>
           <div className=' flex justify-between mt-7'>
@@ -118,6 +153,10 @@ export default function Home() {
               <SwiperSlide className='py-6 '><FeedbackCard /></SwiperSlide>
               <SwiperSlide className='py-6 '><FeedbackCard /></SwiperSlide>
             </Swiper>
+          </div>
+          <div className='w-full flex justify-center items-center my-5 gap-6'>
+            <p className={`text-gray-600 ${poppins.className} font-medium`}>Share your feedback and help us compose a better experience for you.</p>
+            <Button text={"Give your Feedback"} className={"text-sm font-medium"}/>
           </div>
         </div>
       </Layout>

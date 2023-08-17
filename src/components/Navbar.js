@@ -67,7 +67,7 @@ const Navbar = () => {
               ]} />
             </div>
           </div>
-          <Link href={"/"}>Careers</Link>
+          <Link href={"/careers"}>Careers</Link>
           <Link href={"/contact-us"}>Contact</Link>
           <Link href={"/news"}>News</Link>
           <Link href={"/nursing"}>Nursing</Link>

@@ -41,6 +41,82 @@ const Covid = () => {
 						"Cough or sneeze with your face covered, using a handkerchief or tissue. If not, at least cover yourself using your elbow."
 					]}
 				/>
+
+				<div className={`bg-light w-screen h-auto px-28 py-12 flex justify-center items-center ${lexend.className}`}>
+					<div class="w-[60vw] relative overflow-x-auto shadow-md sm:rounded-lg">
+						<table class="w-full text-sm">
+							<thead class="text-center text-white bg-darkGreen">
+								<tr>
+									<th scope="col" class="px-4 py-3">
+										Do's
+									</th>
+									<th scope="col" class="px-6 py-3">
+										Dont's
+									</th>
+								</tr>
+							</thead>
+							<tbody className='text-center text-darkGreen'>
+								<tr class="bg-white ">
+									<td scope="row" class="px-6 py-4">
+										Wash hands
+									</td>
+									<td class="px-6 py-4">
+										Undermine hand washing
+									</td>
+								</tr>
+								<tr class="bg-light ">
+									<td scope="row" class="px-6 py-4">
+										Sanitize
+									</td>
+									<td class="px-6 py-4">
+										Touch objects that are unsanitized
+									</td>
+								</tr>
+								<tr class="bg-white ">
+									<td scope="row" class="px-6 py-4">
+										Wear a mask
+									</td>
+									<td class="px-6 py-4">
+										Go outdoors without a mask
+									</td>
+								</tr>
+								<tr class="bg-light ">
+									<td scope="row" class="px-6 py-4">
+										Practice social distancing
+									</td>
+									<td class="px-6 py-4">
+										Stay in close proximity to people
+									</td>
+								</tr>
+								<tr class="bg-white ">
+									<td scope="row" class="px-6 py-4">
+										Stay aware
+									</td>
+									<td class="px-6 py-4">
+										Ignore guidelines on Covid-19
+									</td>
+								</tr>
+								<tr class="bg-light ">
+									<td scope="row" class="px-6 py-4">
+										Preach the right information
+									</td>
+									<td class="px-6 py-4">
+										Spread misinformation
+									</td>
+								</tr>
+								<tr class="bg-white ">
+									<td scope="row" class="px-6 py-4">
+										Cough/Sneeze with your face covered
+									</td>
+									<td class="px-6 py-4">
+										Sneeze/cough without covering in the open
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</Layout>
 	)

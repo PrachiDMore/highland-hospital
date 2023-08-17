@@ -9,8 +9,9 @@ const Card = ({title, desc, src}) => {
     <>
     <div className='bg-white card-shadow rounded-lg w-full h-auto p-4'>
       <img src={src}/>
-      <h1 className={`mt-2 text-xl font-bold text-darkBlue ${lexend.className}`}>{title}</h1>
-      <p className={`mt-1 ${poppins.className}`}>{desc}</p>
+      <h1 className={`mt-2 text-lg font-bold text-darkBlue ${lexend.className}`}>{title}</h1>
+      <p className={`mt-1 text-sm ${poppins.className}`}>{desc}</p>
+      <p className={`text-sm mt-1 font-semibold text-primaryGreen ${poppins.className}`}>Read More</p>
     </div>
     </>
   )

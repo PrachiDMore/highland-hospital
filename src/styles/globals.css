@@ -44,3 +44,10 @@
 .banner-gradient {
   /* background: linear-gradient(270deg, #01A998 0%, #3D504E 35.73%, #333 52.63%, #2D4442 68.54%, #01A998 100%); */
 }
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}

@@ -24,7 +24,7 @@ const Navbar = () => {
             <FaBars onClick={() => {setOpen(true)}}/>
           </div>
         </div>
-        <div className='hidden lg:w-[15vw] m-auto lg:m-0 w-[30%]'>
+        <div className='hidden lg:block lg:w-[15vw] m-auto lg:m-0 w-[30%]'>
           <img src='/assets/logo.png' />
         </div>
         <div className='hidden lg:w-[15vw] w-[30%]'>

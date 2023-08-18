@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import TeamCard from '@/components/TeamCard'
+import Link from 'next/link'
 
 
 const lexend = Lexend({ subsets: ['latin'] })
@@ -37,7 +38,7 @@ export default function Home() {
             <h1 className={`lg:text-6xl text-4xl font-bold text-darkBlue ${lexend.className}`}><span className='text-primaryGreen'>Caring</span> for You, Every Step of the Way</h1>
             <p className={`text-gray-600 mt-4 ${poppins.className} font-medium`}>Compassionate medical professionals providing comprehensive care and support from diagnosis to recovery.</p>
             <p className={`text-gray-600 mt-3 font-bold ${poppins.className}`}>Book your Appointment Now !</p>
-            <Button text={'Make Appointment'} className={"mt-4 w-max text-sm font-semibold "} />
+            <Link href={"/international-patients/#form"}><Button text={'Make Appointment'} className={"mt-4 w-max text-sm font-semibold "} /></Link>
           </div>
           <div className='lg:w-1/2 w-full h-full bg-lightBlue2 flex justify-center items-center relative'>
             <img className='lg:h-[85%] h-[60%]' src='/assets/home/hero1.png' />
@@ -46,7 +47,7 @@ export default function Home() {
         </div>
 
         {/* section 2 About us */}
-        <div className='w-screen max-w-screen banner-height flex lg:flex-row flex-col items-center'>
+        <div className='w-screen max-w-screen banner-height h-auto flex lg:flex-row flex-col items-center'>
           <div className='lg:block hidden w-1/2 h-full relative'>
             <img className='h-[70%] w-[75%] absolute top-24 left-36 z-[2000]' src='/assets/home/section2.png' />
             <img className='h-[85%] absolute top-12 left-24 z-[1000]' src='/assets/home/Vector1.png' />
@@ -94,13 +95,22 @@ export default function Home() {
         <div className={'hidden lg:block text-white relative h-[300px] w-screen ' + lexend.className} style={{
           backgroundImage: "url(/assets/banner-bg.jpg)"
         }}>
-          <div className='absolute top-0  left-0 h-full w-full' >
+          <div className='z-0 absolute top-0  left-0 h-full w-full' >
             <img src="/assets/banner-bg.jpg" className='h-full w-full object-contain object-right-top' alt="" />
           </div>
-          <div className='flex flex-col items-center justify-center h-full w-full'>
+          <div className='relative z-10 flex flex-col items-center justify-center h-full w-full'>
             <h2 className='text-2xl font-extralight tracking-widest'>EMERGENCY MEDICAL CARE</h2>
             <h1 className={'font-bold text-5xl mt-3 ' + poppins.className}>24/7 <span className='text-accentGreenHover'>Ambulance </span>Services</h1>
             <p className='text-center w-[35%] mt-2 text-sm font-light'>With access to 24 hours emergency assistance, it's also important you can continue to help others!</p>
+            <Button className={"bg-white text-accentGreenHover py-2 font-semibold mt-3"} text={"Join Now"} />
+          </div>
+        </div>
+
+        <div className={'bg-darkBlue block lg:hidden text-white relative h-[300px] w-screen ' + lexend.className}>
+          <div className='relative z-10 flex flex-col items-center justify-center h-full w-full'>
+            <h2 className='text-center lg:text-2xl text-lg font-extralight tracking-widest'>EMERGENCY MEDICAL CARE</h2>
+            <h1 className={'text-center font-bold lg:text-5xl text-3xl mt-3 ' + poppins.className}>24/7 <span className='text-accentGreenHover'>Ambulance </span>Services</h1>
+            <p className='text-center lg:w-[35%] w-full mt-2 text-sm font-light'>With access to 24 hours emergency assistance, it's also important you can continue to help others!</p>
             <Button className={"bg-white text-accentGreenHover py-2 font-semibold mt-3"} text={"Join Now"} />
           </div>
         </div>
@@ -162,7 +172,7 @@ export default function Home() {
           </div>
           <div className='w-full flex lg:flex-row flex-col justify-center items-center my-5 lg:gap-x-6 gap-y-3'>
             <p className={`text-gray-600 ${poppins.className} lg:text-left text-center font-medium`}>Share your feedback and help us compose a better experience for you.</p>
-            <Button text={"Give your Feedback"} className={"text-sm font-medium"} />
+            <Link href={"/feedback"}><Button text={"Give your Feedback"} className={"text-sm font-medium"} /></Link>
           </div>
         </div>
       </Layout>

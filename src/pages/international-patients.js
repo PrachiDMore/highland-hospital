@@ -29,7 +29,7 @@ const InternationalPatients = () => {
 						"Cutting edge technology to support medical diagnostics and medical procedures are employed by specialists in all medical facilities. Complicated cancer care and surgeries, neuro and even general surgeries require high-end technology to continually better outcomes, minimize complications, enable faster recovery and reduce length of hospital stay. Our medical management team and acclaimed specialists are quite comfortable in challenging themselves to new frontiers to provide solutions, always building on their expertise."
 					]} />
 
-				<div className='lg:px-0 px-5 pb-10 bg-light flex flex-col items-center'>
+				<div id='form' className='lg:px-0 px-5 pb-10 bg-light flex flex-col items-center'>
 					<div className='w-full flex flex-col items-center'>
 						<h1 className={`lg:text-left text-center text-4xl font-bold text-darkBlue ${lexend.className}`}>{"Out-Patient Services"}</h1>
 					</div>

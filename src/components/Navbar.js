@@ -5,13 +5,15 @@ import Link from 'next/link'
 import Dropdown from './Dropdown'
 import { GrClose } from 'react-icons/gr'
 import { FaBars } from 'react-icons/fa6'
+import { useRouter } from 'next/router'
 
 const lexend = Lexend({ subsets: ['latin'] })
 
 const Navbar = () => {
 
-  const [navState, setNavState] = useState("")
+  const [navState, setNavState] = useState("text-darkGreen")
   const [open, setOpen] = useState(false)
+  const router = useRouter()
 
   return (
     <>
@@ -31,7 +33,7 @@ const Navbar = () => {
           <FaBars />
         </div>
         <ul className='w-[70vw] items-center justify-between lg:flex hidden'>
-          <Link href={"/"}>Home</Link>
+          <Link className={router.pathname === "/" ? "text-darkGreen" : ''} href={"/"}>Home</Link>
           <div className='relative'>
             <li onClick={() => { setNavState("about") }} className=''>About Us</li>
             <div className={navState == "about" ? "block" : "hidden"}>
@@ -81,11 +83,11 @@ const Navbar = () => {
               ]} />
             </div>
           </div>
-          <Link href={"/careers"}>Careers</Link>
-          <Link href={"/contact-us"}>Contact</Link>
-          <Link href={"/news"}>News</Link>
-          <Link href={"/nursing"}>Nursing</Link>
-          <Button text={"Book Appointment"} />
+          <Link className={router.pathname === "/careers" ? "text-darkGreen" : ''} href={"/careers"}>Careers</Link>
+          <Link className={router.pathname === "/contact-us" ? "text-darkGreen" : ''} href={"/contact-us"}>Contact</Link>
+          <Link className={router.pathname === "/news" ? "text-darkGreen" : ''} href={"/news"}>News</Link>
+          <Link className={router.pathname === "/nursing" ? "text-darkGreen" : ''} href={"/nursing"}>Nursing</Link>
+          <Link href={"/international-patients/#form"}><Button text={'Make Appointment'} /></Link>
         </ul>
       </div>
 
@@ -138,11 +140,14 @@ const Navbar = () => {
               { title: "Urology & Andrology", link: "/specialities/urology" }
             ]} />
           </div>
-          <Link href={"/careers"}>Careers</Link>
-          <Link href={"/contact-us"}>Contact</Link>
-          <Link href={"/news"}>News</Link>
-          <Link href={"/nursing"}>Nursing</Link>
-          <Button text={"Book Appointment"} />
+          <Link className={router.pathname === "/careers" ? "text-darkGreen" : ''} href={"/careers"}>Careers</Link>
+          <Link className={router.pathname === "/contact-us" ? "text-darkGreen" : ''} href={"/contact-us"}>Contact</Link>
+          <Link className={router.pathname === "/news" ? "text-darkGreen" : ''} href={"/news"}>News</Link>
+          <Link className={router.pathname === "/nursing" ? "text-darkGreen" : ''} href={"/nursing"}>Nursing</Link>
+          <Link className={router.pathname === "/covid-19" ? "text-darkGreen" : ''} href={"/covid-19"}>Covid-19</Link>
+          <Link className={router.pathname === "/international-patients" ? "text-darkGreen" : ''} href={"/international-patients"}>International Patients</Link>
+          <Link className={router.pathname === "/feedback" ? "text-darkGreen" : ''} href={"/feedback"}>Feedback</Link>
+          <Link href={"/international-patients/#form"}><Button text={'Make Appointment'} /></Link>
         </ul>
       </div>
     </>

@@ -32,18 +32,18 @@ const contactUs = () => {
 
                 <div className='flex flex-col gap-2 text-sm'>
                   <div className='flex items-center gap-2'>
-                    <HiOutlineLocationMarker/>
-                    <p>1223 Ruckman Road, Oklahoma</p>
+                    <HiOutlineLocationMarker className='text-3xl'/>
+                    <p>Mother Theresa Road, Kankanady, Highland Hospitals, Mangaluru, Karnataka 575002, India.</p>
                   </div>
 
                   <div className='flex items-center gap-2'>
                     <FiMail/>
-                    <p>info@HighlandHospital.com</p>
+                    <p>reachus@highlandhospital.in</p>
                   </div>
 
                   <div className='flex items-center gap-2'>
                     <BiPhoneCall/>
-                    <p>1234567890</p>
+                    <p>0824-4235555</p>
                   </div>
                 </div>
               </div>

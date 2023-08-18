@@ -20,7 +20,7 @@ const Footer = () => {
             <p className='w-4/5'>"Your health, our commitment - Together, we make a difference."</p>
           </div>
 
-          <div className='lg:w-[25vw] flex flex-col gap-3 w-full '>
+          <div className='lg:w-[20vw] flex flex-col gap-3 w-full '>
             <h1 className='text-base font-medium '>Useful Links</h1>
             <ul className='flex flex-col gap-2'>
               <li>Services</li>
@@ -30,22 +30,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className='lg:w-[30vw] flex flex-col gap-3 w-full'>
+          <div className='lg:w-[35vw] flex flex-col gap-3 w-full '>
             <h1 className='text-base font-medium '>Contact</h1>
             <div className='flex flex-col gap-2 text-sm'>
-              <div className='flex items-center gap-2'>
-                <HiOutlineLocationMarker />
-                <p>1223 Ruckman Road, Oklahoma</p>
+              <div className='flex items-start gap-2'>
+                <HiOutlineLocationMarker className='text-4xl'/>
+                <p>Mother Theresa Road, Kankanady, Highland Hospitals, Mangaluru, Karnataka 575002, India.</p>
               </div>
 
               <div className='flex items-center gap-2'>
                 <FiMail />
-                <p>info@HighlandHospital.com</p>
+                <p>reachus@highlandhospital.in</p>
               </div>
 
               <div className='flex items-center gap-2'>
                 <BiPhoneCall />
-                <p>1234567890</p>
+                <p>0824-4235555</p>
               </div>
             </div>
           </div>

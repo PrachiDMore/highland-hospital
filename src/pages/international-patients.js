@@ -3,15 +3,68 @@ import Button from '@/components/Button'
 import Info from '@/components/Info'
 import Layout from '@/components/Layout'
 import { Lexend, Poppins } from 'next/font/google'
-import React from 'react'
+import React, { useState } from 'react'
 import { MdMedicalServices } from 'react-icons/md';
 import { FaUserDoctor, FaSuitcase } from 'react-icons/fa6';
 import { BsCalendarEventFill } from 'react-icons/bs';
+import axios from 'axios'
+import moment from 'moment'
 
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 const InternationalPatients = () => {
+	const initialState = {
+		dateofAppointment: "",
+		firstname: "",
+		lastname: "",
+		email: "",
+		phoneNumber: "",
+		timeofAppointment: "",
+		doctor: "",
+		message: "",
+		status: "new"
+	}
+	const [formState, setFormState] = useState(initialState)
+
+	const handleChange = (e) => {
+		console.log(e.target.value)
+		setFormState({
+			...formState,
+			[e.target.id]: e.target.value
+		})
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		axios("https://highland-hospital-backend.vercel.app/post-appointment", {
+			method: 'POST',
+			data: {
+				dateofAppointment: formState.dateofAppointment,
+				firstname: formState.firstname,
+				lastname: formState.lastname,
+				email: formState.email,
+				phoneNumber: formState.phoneNumber,
+				timeofAppointment: moment(formState.timeofAppointment, "HH:mm").format("x"),
+				doctor: formState.doctor,
+				message: formState.message,
+				status: 'new'
+			}
+		})
+		.then((res) => {
+			if(!res.data.error){
+				setFormState(initialState)
+				alert('Response has been recorded')
+			}
+			else{
+				alert("Something went wrong!")
+			}
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	}
+
 	return (
 		<Layout>
 			<div className='w-screen'>
@@ -87,41 +140,41 @@ const InternationalPatients = () => {
 						</div>
 
 						{/* right */}
-						<div className={'lg:w-3/5 w-full lg:p-10 py-8 flex flex-col gap-5 items-center justify-center text-grey ' + poppins.className}>
+						<form onSubmit={handleSubmit} className={'lg:w-3/5 w-full lg:p-10 py-8 flex flex-col gap-5 items-center justify-center text-grey ' + poppins.className}>
 							<div className='w-full flex lg:flex-row flex-col gap-10 justify-between'>
 								<div className='lg:w-1/2 w-full flex gap-1 flex-col'>
 									<label className='font-medium'>First Name</label>
-									<input type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
+									<input onChange={handleChange} value={formState?.firstname} id='firstname' type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
 								</div>
 								<div className='lg:w-1/2 w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Last Name</label>
-									<input type='text' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.lastname} id='lastname' type='text' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 							</div>
 
 							<div className='w-full flex lg:flex-row flex-col gap-10 justify-between'>
 								<div className='lg:w-1/2 w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Email</label>
-									<input type='email' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.email} id='email' type='email' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 								<div className='lg:w-1/2 w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Phone Number</label>
-									<input type='number' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.phoneNumber} id='phoneNumber' type='number' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 							</div>
 
 							<div className='w-full flex lg:flex-row flex-col gap-5 justify-between'>
 								<div className='lg:w-[30%] w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Select Date</label>
-									<input type='date' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.dateofAppointment} id='dateofAppointment' type='date' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 								<div className='lg:w-[30%] w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Select Time</label>
-									<input type='time' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.timeofAppointment} id='timeofAppointment' type='time' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 								<div className='lg:w-[40%] w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Select Doctor</label>
-									<input type='text' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<input onChange={handleChange} value={formState?.doctor} id='doctor' type='text' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
 								</div>
 							</div>
 
@@ -132,11 +185,11 @@ const InternationalPatients = () => {
 
 							<div className='w-full flex gap-1 flex-col'>
 								<label className='font-medium'>Message</label>
-								<textarea className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none h-16 resize-none' />
+								<textarea onChange={handleChange} value={formState?.message} id='message' className='border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none h-16 resize-none' />
 							</div>
 
-							<Button text={"Submit"} className={"text-sm mt-3"} />
-						</div>
+							<Button type='submit' text={"Submit"} className={"text-sm mt-3"} />
+						</form>
 					</div>
 				</div>
 			</div>

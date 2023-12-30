@@ -12,6 +12,7 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 const nursing = () => {
   const [showForm, setShowForm] = useState(false)
   const handelClick = () => {
+    console.log("asdf")
     setShowForm(true)
   }
   return (

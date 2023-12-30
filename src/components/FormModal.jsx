@@ -1,18 +1,18 @@
 import React from 'react'
 import Button from './Button'
 
-const FormModal = ({ showform, setShowForm }) => {
+const FormModal = ({ showForm, setShowForm }) => {
   return (
     <div>
       <div>
-        <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" className={showform ? "fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen flex justify-center items-center max-h-full opacity-100 bg-black/50" : "fixed flex justify-center items-center top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen max-h-full opacity-0 bg-black/50 pointer-events-none"}>
+        <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" className={showForm ? "fixed top-0 left-0 right-0 z-[5000] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen flex justify-center items-center max-h-full opacity-100 bg-black/50" : "fixed flex justify-center items-center top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen max-h-full opacity-0 bg-black/50 pointer-events-none"}>
           <div className="relative w-full max-w-3xl max-h-full">
 
             <div className="relative bg-white rounded-lg shadow ">
 
               <div className="flex items-center justify-between p-6 pb-3 border-b rounded-t ">
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  Add News
+                  Enquire Now
                 </h3>
                 <button onClick={() => { setShowForm(false) }} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-6 h-6 ml-auto inline-flex justify-center items-center " data-modal-hide="staticModal">
                   <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -40,7 +40,7 @@ const FormModal = ({ showform, setShowForm }) => {
               </div>
 
               <div className="flex items-center justify-center p-6 pt-3 border-t border-gray-200 rounded-b ">
-                <Button text={"Add"} />
+                <Button text={"Submit"} />
               </div>
             </div>
           </div>

@@ -1,13 +1,16 @@
 import Banner from '@/components/Banner'
 import Layout from '@/components/Layout'
-import React from 'react'
+import React, { useState } from 'react'
 import { Lexend, Poppins } from 'next/font/google'
 import Button from '@/components/Button'
+import CareerFormModal from '@/components/CareerFormModal'
 
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 const careers = () => {
+  const [showCareerForm, setShowCareerForm] = useState(false)
+
   return (
     <>
       <Layout>
@@ -44,7 +47,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} onClick={() => {setShowCareerForm(true)}} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 <tr class="bg-light ">
@@ -81,6 +84,7 @@ const careers = () => {
           </div>
         </div>
       </Layout>
+      <CareerFormModal setShowCareerForm={setShowCareerForm} showCareerForm={showCareerForm}/>
     </>
   )
 }

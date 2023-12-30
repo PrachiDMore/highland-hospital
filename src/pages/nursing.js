@@ -1,19 +1,24 @@
 import Banner from '@/components/Banner'
 import Info from '@/components/Info'
 import Layout from '@/components/Layout'
-import React from 'react'
+import React, { useState } from 'react'
 import { Lexend, Poppins } from 'next/font/google'
 import List from '@/components/List'
+import FormModal from '@/components/FormModal'
 
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 const nursing = () => {
+  const [showForm, setShowForm] = useState(false)
+  const handelClick = () => {
+    setShowForm(true)
+  }
   return (
     <>
       <Layout>
         <div className='h-auto w-screen flex flex-col'>
-          <Banner src={"/assets/nursing/main.png"} title={"Welcome To Mangalore College of Nursing"} button={{ text: "Enquire Now", link: "asd" }} />
+          <Banner src={"/assets/nursing/main.png"} title={"Welcome To Mangalore College of Nursing"} button={{ text: "Enquire Now", onClick: handelClick }} />
 
           <Info category={"other"} title={"About Us"} src={"/assets/nursing/info.png"} paras={["As the healthcare landscape continues to evolve and grow at a fast pace, the role and need for a workforce of highly educated nurses is becoming even more critical. Hence we decided to expand our service into the field of health education. This will cater to the increasing need of competent and sincere health service providers that our society lacks."]} />
 
@@ -45,6 +50,7 @@ const nursing = () => {
           </div>
         </div>
       </Layout>
+      <FormModal setShowForm={setShowForm} showForm={showForm} />
     </>
   )
 }

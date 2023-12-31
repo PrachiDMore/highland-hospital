@@ -61,7 +61,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} onClick={() => {setShowCareerForm(true)}} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 <tr class="bg-white ">
@@ -75,7 +75,7 @@ const careers = () => {
                   Mangalore
                   </td>
                   <td class="px-6 py-4">
-                    <Button text={"Apply"} className={"text-sm px-4 py-2"}/>
+                    <Button text={"Apply"} onClick={() => {setShowCareerForm(true)}} className={"text-sm px-4 py-2"}/>
                   </td>
                 </tr>
                 

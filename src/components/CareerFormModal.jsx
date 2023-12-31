@@ -10,7 +10,7 @@ const CareerFormModal = ({ showCareerForm, setShowCareerForm }) => {
   }
   const [formState, setFormState] = useState(initialState)
 
-  const handelChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault()
     setFormState({
       ...formState,
@@ -18,6 +18,29 @@ const CareerFormModal = ({ showCareerForm, setShowCareerForm }) => {
     })
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios("https://highland-hospital-backend.vercel.app/post-career", {
+      method: "POST",
+      data: {
+        fullname: formState.fullname,
+        email: formState.email,
+        message: formState.message,
+      }
+    })
+      .then((res) => {
+        if (!res.data.error) {
+          setFormState(initialState)
+          alert("Your response has been recorded!")
+        } else {
+          console.log(res.data.message)
+          alert("Something went wrong!")
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
 
   return (
@@ -26,7 +49,7 @@ const CareerFormModal = ({ showCareerForm, setShowCareerForm }) => {
         <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" className={showCareerForm ? "fixed top-0 left-0 right-0 z-[5000] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen flex justify-center items-center max-h-full opacity-100 bg-black/50" : "fixed flex justify-center items-center top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-screen max-h-full opacity-0 bg-black/50 pointer-events-none"}>
           <div className="relative w-full max-w-xl max-h-full">
 
-            <div className="relative bg-white rounded-lg shadow ">
+            <form onSubmit={handleSubmit} className="relative bg-white rounded-lg shadow ">
 
               <div className="flex items-center justify-between p-6 pb-3 border-b rounded-t ">
                 <h3 className="text-xl font-semibold text-gray-900 ">
@@ -43,12 +66,12 @@ const CareerFormModal = ({ showCareerForm, setShowCareerForm }) => {
               <div className="p-6 flex flex-col justify-center gap-3">
                 <div className='flex flex-col gap-1 '>
                   <label className='font-medium'>Full Name</label>
-                  <input onClick={handelChange} value={formState?.fullname} id='fullname' type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
+                  <input onClick={handleChange} value={formState?.fullname} id='fullname' type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
                 </div>
 
                 <div className='flex flex-col gap-1 '>
                   <label className='font-medium'>Email</label>
-                  <input onClick={handelChange} value={formState?.email} id='email' type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
+                  <input onClick={handleChange} value={formState?.email} id='email' type='text' className='border-b focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
                 </div>
 
                 <div className='flex flex-col gap-1 '>
@@ -58,14 +81,14 @@ const CareerFormModal = ({ showCareerForm, setShowCareerForm }) => {
 
                 <div className='flex flex-col gap-1 '>
                   <label className='font-medium'>Message</label>
-                  <textarea onClick={handelChange} value={formState?.message} id='message' type='text' className='border-b h-24 resize-none focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
+                  <textarea onClick={handleChange} value={formState?.message} id='message' type='text' className='border-b h-24 resize-none focus:border-b-2 border-grey outline-none focus:border-primaryGreen' />
                 </div>
               </div>
 
               <div className="flex items-center justify-center p-6 pt-3 border-t border-gray-200 rounded-b ">
-                <Button text={"Apply"} />
+                <Button type={"submit"} text={"Apply"} />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

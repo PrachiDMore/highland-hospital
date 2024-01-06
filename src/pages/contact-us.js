@@ -46,7 +46,8 @@ const contactUs = () => {
         phonenumber: formState.phonenumber,
         subject: formState.subject,
         message: formState.message,
-        status: "pending"
+        status: "pending",
+        timeStamp: Date.now()
       }
     })
       .then((res) => {

@@ -16,7 +16,6 @@ const news = () => {
       method: "GET"
     })
       .then((res) => {
-        console.log(res.data)
         setNews(res.data.response)
       })
   }, [])
@@ -31,14 +30,12 @@ const news = () => {
 
           <div className='w-full mt-6 grid lg:grid-cols-3 grid-cols-1 gap-8'>
             {
-              news?.map((value, index) => {
+              news?.filter((e) => {
+                return e.active
+              })?.map((value, index) => {
                 return <Card src={value?.image} title={value?.title} desc={value?.description} />
               })
             }
-
-            <Card src={'/assets/news/image2.png'} title={"Republic Day Celebrations"} desc={"You know what this wonderful week is all about, but when is it? The weeks of February 6-12, 2023, will be marked as Children's Mental Health Week. Children's Mental He"} />
-            <Card src={'/assets/news/image3.png'} title={"ANTI SMOKING CAMP"} desc={"You know what this wonderful week is all about, but when is it? The weeks of February 6-12, 2023, will be marked as Children's Mental Health Week. Children's Mental He"} />
-            <Card src={'/assets/news/image1.png'} title={"Children's Mental health awareness week"} desc={"You know what this wonderful week is all about, but when is it? The weeks of February 6-12, 2023, will be marked as Children's Mental Health Week. Children's Mental He"} />
           </div>
         </div>
       </Layout>

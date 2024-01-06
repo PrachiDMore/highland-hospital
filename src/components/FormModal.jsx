@@ -9,7 +9,7 @@ const FormModal = ({ showForm, setShowForm }) => {
     phonenumber: "",
     subject: "",
     message: "",
-    status: "pending"
+    status: "pending",
   }
   const [formState, setFormState] = useState(initialState)
 
@@ -31,7 +31,8 @@ const FormModal = ({ showForm, setShowForm }) => {
         phonenumber: formState.phonenumber,
         subject: formState.subject,
         message: formState.message,
-        status: "pending"
+        status: "pending",
+        timestamp: Date.now()
       }
     })
       .then((res) => {

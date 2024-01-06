@@ -11,15 +11,14 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 
 const nursing = () => {
   const [showForm, setShowForm] = useState(false)
-  const handelClick = () => {
-    console.log("asdf")
+  const handleClick = () => {
     setShowForm(true)
   }
   return (
     <>
       <Layout>
         <div className='h-auto w-screen flex flex-col'>
-          <Banner src={"/assets/nursing/main.png"} title={"Welcome To Mangalore College of Nursing"} button={{ text: "Enquire Now", onClick: handelClick }} />
+          <Banner src={"/assets/nursing/main.png"} title={"Welcome To Mangalore College of Nursing"} button={{ text: "Enquire Now", onClick: handleClick }} />
 
           <Info category={"other"} title={"About Us"} src={"/assets/nursing/info.png"} paras={["As the healthcare landscape continues to evolve and grow at a fast pace, the role and need for a workforce of highly educated nurses is becoming even more critical. Hence we decided to expand our service into the field of health education. This will cater to the increasing need of competent and sincere health service providers that our society lacks."]} />
 

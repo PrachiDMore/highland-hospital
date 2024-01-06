@@ -3,7 +3,7 @@ import Button from '@/components/Button'
 import Info from '@/components/Info'
 import Layout from '@/components/Layout'
 import { Lexend, Poppins } from 'next/font/google'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdMedicalServices } from 'react-icons/md';
 import { FaUserDoctor, FaSuitcase } from 'react-icons/fa6';
 import { BsCalendarEventFill } from 'react-icons/bs';
@@ -14,6 +14,7 @@ const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 const InternationalPatients = () => {
+	const [doctors, setDoctors] = useState([]);
 	const initialState = {
 		dateofAppointment: "",
 		firstname: "",
@@ -27,8 +28,25 @@ const InternationalPatients = () => {
 	}
 	const [formState, setFormState] = useState(initialState)
 
+	useEffect(() => {
+		axios("https://highland-hospital-backend.vercel.app/get-doctor", {
+			method: 'GET',
+		})
+		.then((res) => {
+			if(!res.data.error){
+				setDoctors(res.data.response)
+			}
+			else{
+				alert("Something went wrong!")
+			}
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	}, [])
+	
+
 	const handleChange = (e) => {
-		console.log(e.target.value)
 		setFormState({
 			...formState,
 			[e.target.id]: e.target.value
@@ -174,7 +192,13 @@ const InternationalPatients = () => {
 								</div>
 								<div className='lg:w-[40%] w-full flex gap-1 flex-col'>
 									<label className='font-medium'>Select Doctor</label>
-									<input onChange={handleChange} value={formState?.doctor} id='doctor' type='text' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none' />
+									<select onChange={handleChange} value={formState?.doctor} id='doctor' type='text' className='w-full border-b border-grey focus:border-b-2 focus:border-primaryGreen outline-none'>
+										{
+											doctors?.map((doctor)=> {
+												return <option value={doctor?._id}>{doctor?.name} ({doctor?.designation})</option>
+											})
+										}
+									</select>
 								</div>
 							</div>
 

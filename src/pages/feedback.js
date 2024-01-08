@@ -20,7 +20,6 @@ const feedback = () => {
     phonenumber: "",
     address: "",
     description: "",
-    timestamp: true,
     status: "pending",
   }
   const [formState, setFormState] = useState(initialState)
@@ -43,7 +42,7 @@ const feedback = () => {
         phonenumber: formState.phonenumber,
         address: formState.address,
         description: formState.description,
-        timestamp: true,
+        timestamp: Date.now(),
         status: "pending",
       }
     })

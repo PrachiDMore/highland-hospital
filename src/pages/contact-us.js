@@ -15,7 +15,7 @@ const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], su
 const contactUs = () => {
 
   const initialState = {
-    timeStamp: '',
+    timeStamp: Date.now(),
     firstName: "",
     lastName: "",
     email: "",

@@ -1,19 +1,30 @@
 import Banner from '@/components/Banner'
 import Info from '@/components/Info'
 import Layout from '@/components/Layout'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Lexend, Poppins } from 'next/font/google'
 import List from '@/components/List'
 import FormModal from '@/components/FormModal'
+import axios from 'axios'
+import Card from '@/components/Card'
 
 const lexend = Lexend({ subsets: ['latin'] })
 const poppins = Poppins({ weight: ['400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
-const nursing = () => {
+const Nursing = () => {
   const [showForm, setShowForm] = useState(false)
   const handleClick = () => {
     setShowForm(true)
   }
+  useEffect(() => {
+    axios("https://highland-hospital-backend.vercel.app/get-news", {
+      method: "GET"
+    })
+      .then((res) => {
+        setNews(res.data.response)
+      })
+  }, [])
+  const [news, setNews] = useState([])
   return (
     <>
       <Layout>
@@ -49,10 +60,24 @@ const nursing = () => {
             <h1 className='font-bold text-xl'>For Admission Contact- 6366105555</h1>
           </div>
         </div>
+        <div className='flex flex-col justify-center items-center w-screen w-max-screen lg:px-28 px-5 py-10 bg-light'>
+          <h1 className={`text-4xl font-bold text-darkBlue ${lexend.className}`}>Latest News and Update</h1>
+          <p className={`mt-1 ${poppins.className}`}>The followings are the latest news and updates about Highland Hospital Family</p>
+
+          <div className='w-full mt-6 grid lg:grid-cols-3 grid-cols-1 gap-8'>
+            {
+              news?.filter((e) => {
+                return e.nursingNews
+              })?.map((value, index) => {
+                return <Card key={index} src={value?.image} title={value?.title} desc={value?.description} />
+              })
+            }
+          </div>
+        </div>
       </Layout>
       <FormModal setShowForm={setShowForm} showForm={showForm} />
     </>
   )
 }
 
-export default nursing
+export default Nursing

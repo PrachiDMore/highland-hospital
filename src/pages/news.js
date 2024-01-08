@@ -31,9 +31,9 @@ const news = () => {
           <div className='w-full mt-6 grid lg:grid-cols-3 grid-cols-1 gap-8'>
             {
               news?.filter((e) => {
-                return e.active
+                return !e.nursingNews
               })?.map((value, index) => {
-                return <Card src={value?.image} title={value?.title} desc={value?.description} />
+                return <Card key={index} src={value?.image} title={value?.title} desc={value?.description} />
               })
             }
           </div>
